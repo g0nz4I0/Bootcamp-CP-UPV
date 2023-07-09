@@ -5,13 +5,17 @@
 #include<algorithm>
 #include<iomanip>
 
-using ull = unsigned long long;
-using ll = long long;
+using ull = unsigned long long; // [[C++11]] replaces old typedefs used in C
+using ll = long long;			// [[C++11]] replaces old typedefs used in C
 
-void find_max(unsigned long long& x, unsigned long long& y, unsigned long long& z){
+
+// the parameters are passed by reference, this means that the modifications that
+// are applied inside the function will affect the original variable that we passed in
+// for more info search about-> pass by value AND pass by reference C++
+void discount(ull& x, ull& y, ull & z){
     if(z!= 0){
         z--;
-        return;
+        return;//we use early returns to scape the function, it is possible to "return; " in a function that returns void in C++
     }
     if(y != 0){
         y--;
@@ -25,6 +29,6 @@ void find_max(unsigned long long& x, unsigned long long& y, unsigned long long& 
 int main(){
     ull a,t,n;
     std::cin>>a>>t>>n;
-    find_max(a,t,n);
+    discount(a,t,n);
     std::cout<<a*5 + t*7 + n*13;   
 }

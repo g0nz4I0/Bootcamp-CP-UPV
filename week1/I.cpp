@@ -5,14 +5,14 @@
 #include<algorithm>
 #include<iomanip>
 
-using ull = unsigned long long;
-using ll = long long;
-ull triangular(ull l)
+using ull = unsigned long long; // [[C++11]] replaces old typedefs used in C
+using ll = long long;			// [[C++11]] replaces old typedefs used in C
+ull triangular(ull l)//not much to this problem in terms of C++, just some math
 {
     if(l == 1){
         return 1;
     }
-    if(l % 2 == 0)//si la base es par
+    if(l % 2 == 0)//if the base is even
     {
         return (l + 1) * l/2;
     }else{
@@ -21,7 +21,7 @@ ull triangular(ull l)
 }
  
 int main(){
-unsigned long long n{};
+ull n{};
 std::cin>>n;
 std::cout<<triangular(n);
 return 0;
